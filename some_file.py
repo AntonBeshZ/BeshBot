@@ -1,3 +1,11 @@
-print('Hello Besh!')
+import logging.config
 
-print('My name BeshBot!')
+import yaml
+from module_1 import main
+
+with open('logging_config.yaml', 'rt') as f:
+    config = yaml.safe_load(f.read())
+
+logging.config.dictConfig(config)
+
+main()
